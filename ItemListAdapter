@@ -1,0 +1,48 @@
+package com.example.viikko12;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class ItemListAdapter extends RecyclerView.Adapter<ItemViewHolder>{
+    private Context context;
+    private ArrayList<Item> items = new ArrayList<>();
+    public ItemListAdapter(Context context, ArrayList<Item> items){
+        this.context = context;
+        //Collections.sort(users, new Comparator<User>() {
+        //@Override
+        //public int compare(User u1, User u2) {
+        //    return u1.getLastName().compareTo(u2.getLastName());
+        //  }
+        //});
+        this.items = new ArrayList<>(items);
+    }
+
+    @NonNull
+    @Override
+    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+        return new ItemViewHolder(LayoutInflater.from(context).inflate(R.layout.list_view, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position){
+        Item item = items.get(position);
+        holder.name.setText(item.getItemName());
+        holder.info.setText(item.getInfo());
+
+    }
+
+    @Override
+    public int getItemCount(){
+        return items.size();
+    }
+}
