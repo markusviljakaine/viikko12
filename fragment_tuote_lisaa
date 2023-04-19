@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.tuoteLisaa">
+
+    <EditText
+        android:id="@+id/lisaaTuote"
+        android:layout_width="wrap_content"
+        android:layout_height="107dp"
+        android:layout_gravity="top|left"
+        android:ems="10"
+        android:hint="Lisää tuote"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/lisaTiedot"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_gravity="left|center"
+        android:ems="10"
+        android:hint="Lisätiedot"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="199dp"
+        android:layout_height="85dp"
+        android:layout_gravity="right|center"
+        android:onClick="addItem"
+        android:text="Button" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="201dp"
+        android:layout_height="106dp"
+        android:layout_gravity="right|top"
+        android:text="Tärkeä" />
+
+
+</FrameLayout>
