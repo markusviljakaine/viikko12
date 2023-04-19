@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9C27B0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/StudentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ostos"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#EFEBEB"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ExtraInfo"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:text="Lisätiedot"
+            android:textColor="#F8F5F5" />
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
