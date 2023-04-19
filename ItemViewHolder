@@ -1,0 +1,18 @@
+package com.example.viikko12;
+
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class ItemViewHolder extends RecyclerView.ViewHolder{
+    TextView name, info;
+
+    public ItemViewHolder(@NonNull View itemView){
+        super(itemView);
+        name = itemView.findViewById(R.id.StudentName);
+        info = itemView.findViewById(R.id.ExtraInfo);
+    }
+
+}
