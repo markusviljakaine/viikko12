@@ -1,0 +1,69 @@
+package com.example.viikko12;
+
+
+import android.content.Context;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import com.example.viikko12.ItemListAdapter;
+import java.util.List;
+
+public class ItemStorage {
+
+    private ArrayList<Item> items = new ArrayList<>();
+
+    private ArrayList<Item> important = new ArrayList<>();
+
+    private static ItemStorage itemStorage = null;
+
+    private ItemStorage(){
+    }
+
+    public static ItemStorage getInstance(){
+        if(itemStorage == null){
+            itemStorage = new ItemStorage();
+        }
+        return itemStorage;
+    }
+
+
+    public ArrayList<Item> getItems(){
+        return items;
+    }
+
+    public void addItem(Item item){
+        items.add(item);
+
+    }
+    public void saveUsers(Context context) {
+        try {
+            ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
+            userWriter.writeObject(items);
+            userWriter.close();
+        } catch (IOException e) {
+            System.out.println("Oppilaiden tallentaminen ei onnistunut");
+        }
+    }
+
+    public void loadUsers(Context context) {
+        try {
+            ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("users.data"));
+            items = (ArrayList<Item>) userReader.readObject();
+            userReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Oppilaiden lukeminen ei onnistunut");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Oppilaiden lukeminen ei onnistunut");
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            System.out.println("Oppilaiden lukeminen ei onnistunut");
+            e.printStackTrace();
+        }
+    }
+}
