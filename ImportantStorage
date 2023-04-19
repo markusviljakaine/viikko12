@@ -1,0 +1,30 @@
+package com.example.viikko12;
+
+
+import java.util.ArrayList;
+
+
+public class ImportantStorage {
+
+    private ArrayList<Item> important = new ArrayList<>();
+
+    private static ImportantStorage importantStorage = null;
+
+    private ImportantStorage() {
+    }
+
+    public static ImportantStorage getInstance() {
+        if (importantStorage == null) {
+            importantStorage = new ImportantStorage();
+        }
+        return importantStorage;
+    }
+
+    public ArrayList<Item> getImportant() {
+        return important;
+    }
+
+    public void addItem(Item item) {
+        important.add(item);
+    }
+}
