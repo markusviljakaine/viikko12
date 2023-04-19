@@ -1,0 +1,22 @@
+package com.example.viikko12;
+
+import java.io.Serializable;
+
+public class Item implements Serializable {
+    protected String tuote;
+    protected String info;
+
+    public Item(String tuote, String info) {
+        this.tuote = tuote;
+        this.info = info;
+    }
+
+    public String getItemName() {
+        return tuote;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+}
